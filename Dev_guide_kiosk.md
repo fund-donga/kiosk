@@ -21,7 +21,7 @@ https://xd.adobe.com/view/0e93af62-ed1d-49b2-bbdf-8b188ff8de02-5bc0/
     - 대시보드 https://admin.iamport.kr/users/login
     - 개발가이드 https://www.iamport.kr/getstarted
     - 연동매뉴얼 https://docs.iamport.kr/
-    - Github https://docs.iamport.kr/
+    - Github https://github.com/iamport
     - API문서 https://api.iamport.kr/
     - 결제DEMO https://www.iamport.kr/demo
   - 적용대상
@@ -29,6 +29,7 @@ https://xd.adobe.com/view/0e93af62-ed1d-49b2-bbdf-8b188ff8de02-5bc0/
     - 키오스크에서 카카오페이 아임포트 적용 참고 [[kiosk-kakaopay.md]](kiosk-kakaopay.md)
 
 ### 결제수단
+전체 결제수단의 개요정보입니다. 상세적용은 홈페이지, 키오스크간 상이할 수 있으니 아래쪽 관련내용과 함께 참조하시기 바랍니다.
 #### 자동이체
 - 결제대행사: 금융결제원CMS
 - 프로세스
@@ -38,7 +39,9 @@ https://xd.adobe.com/view/0e93af62-ed1d-49b2-bbdf-8b188ff8de02-5bc0/
   4. 결제내역 
 #### 신용카드 (PG, 정기결제)
 - 결제대행사: 나이스페이(PG, 가입예정)
-- REST API방식 https://docs.iamport.kr/implementation/subscription
+- REST API방식  
+  https://docs.iamport.kr/implementation/subscription  
+  https://github.com/iamport/iamport-manual/blob/master/%EB%B9%84%EC%9D%B8%EC%A6%9D%EA%B2%B0%EC%A0%9C/example/nice-request-billing-key.md
 #### 신용카드 (현장 일시불 결제)
 - 결제대행사: KSNet(VAN, 가입예정)
 - KSNET 제공 결제모듈 이용
@@ -47,10 +50,49 @@ https://xd.adobe.com/view/0e93af62-ed1d-49b2-bbdf-8b188ff8de02-5bc0/
   분납 이용하고자 하는 기부자는 신용카드 정기결제로 처리
 #### 카카오페이 (일시/정기결제)
 - 결제대행사: 카카오페이(PG, 가입예정)
+- 아임포트 이용
+  - 일시결제  
+    https://github.com/iamport/iamport-manual/blob/master/%EC%9D%B8%EC%A6%9D%EA%B2%B0%EC%A0%9C/sample/kakao.md
+  - 정기결제  
+    https://github.com/iamport/iamport-manual/blob/master/%EB%B9%84%EC%9D%B8%EC%A6%9D%EA%B2%B0%EC%A0%9C/example/kakaopay-request-billing-key.md
+- 참고자료  
+  - 카카오페이 개발자 센터  
+  https://developers.kakao.com/docs/latest/ko/kakaopay/common
+- 유사 웹페이지 적용 샤례
+  - 서원대학교 발전기금 홈페이지 (일시/정기기부 적용)
+  https://with.seowon.ac.kr/with/fund/step?menuId=MENU00353
+  - 푸르메 재단 (일시기부 적용) https://purme.org/donation-apply
+
 #### 썸패스 (일시결제)
 - 결제대행사: 썸뱅크(직접 이체방식)
+- 썸패스는 키오스크에만 적용 예정입니다.
+- 부산은행 디지털사업부와 관련 문서, API제공에 대한 협의 예정입니다.
+- 홈페이지에 네이버페이 적용 불가시 썸패스 적용 가능여부 검토예정입니다.
 #### 네이버페이 (일시/정기결제)
 - 결제대행사: 네이버페이 (PG, 가입예정)
+- 네이버페이는 홈페이지만 적용 예정입니다.
+  - 향후 적용여부 판단계획(홈페이지)
+    - 아임포트측과 협의 후 적용 가부 판단
+    - 아임포트 적용 불가시 직접 네이버페이 구현 여부 판단
+    - 네이버페이 최종 적용 불가 판단 시 썸패스의 웹페이지 적용여부를 검토
+    - 네이버페이, 썸패스 모두 웹 적용 불가 판단시 웹은 두가지 모두 구현하지 않음
+- 아임포트 이용
+  - 일시결제  
+  https://github.com/iamport/iamport-manual/blob/master/NAVERPAY/sample/naverpay-pg.md
+  - 정기결제  
+  https://github.com/iamport/iamport-manual/blob/master/NAVERPAY/sample/naverpay-recurring.md
+- 참고자료
+  - 네이버페이 개발자 센터
+  일시결제  
+  https://developer.pay.naver.com/docs/v2/api#payments-payments_flow
+  정기결제  
+  https://developer.pay.naver.com/docs/v2/api#recurrent-recurrent_summary
+- 유사 웹페이지 적용 사례
+  - 굿네이버스  
+  https://www.goodneighbors.kr/support_pay/regular.gn
+  - 유니세프  
+  https://www.unicef.or.kr/donation/?TrackCode=pc_donation_btn
+
 ## 홈페이지와의 연동
 ### 홈페이지 개발 정보
 - 발전기금 홈페이지 프로토 타입  
