@@ -29,7 +29,7 @@ https://xd.adobe.com/view/0e93af62-ed1d-49b2-bbdf-8b188ff8de02-5bc0/
     - 키오스크에서 카카오페이 아임포트 적용 참고 [[kiosk-kakaopay.md]](kiosk-kakaopay.md)
 
 ### 결제수단
-- 자동이체
+#### 자동이체
   - 결제대행사: 금융결제원CMS
   - 프로세스
     1. 관리자 약정내역 엑셀 다운로드(웹 관리자 페이지)
