@@ -13,6 +13,21 @@ https://xd.adobe.com/view/0e93af62-ed1d-49b2-bbdf-8b188ff8de02-5bc0/
 ## [XD 가이드 문서](#zero-xd-가이드-문서)
 # :one: Background
 ## 개요
+키오스크 기부 단말기 제작 프로젝트입니다.  
+생성된 정보는 기본적으로 동아대학교 발전기금 홈페이지로 전송됩니다.  
+홈페이지에서는 홈페이지에서 생성된 정보와 키오스크에서 생성된 정보를 취합해 동아대학교 발전기금시스템 DB로 전송합니다.
+키오스크는 본인인증 방식에 따라 모드가 나뉩니다.
+최초 계획에서는 QR코드 인증, 전화번호 인증, 사진 인증방식을 구현하고자 하였고 현재까지 시안은 QR코드 인증, 전화번호 인증까지만 작업되었습니다.
+## 약정과 결제
+동아대학교는 기부행위 약정과 기부 두가지 단계로 나누어 인식하며 두가지 모두가 이루어졌을 때 기부가 완료되었다고 인식합니다.
+### 약정
+- 기부자가 기부 의사를 구두, 전화, 문서, 전자적 입력을 통해 밝히는 것입니다.  
+  일반 상거래에서 주문, 주문서 입력, 계약서 작성과 유사합니다.
+### 결제
+- 기부자가 밝힌 기부의사에 따라 기부금을 납입 하는 것 입니다.  
+  일반 상거래에서 결제의 의미와 동일 합니다.
+### 개발방향
+- 홈페이지, 키오스크 모두 불가피한 상황을 제외하고는 기부자의 약정과 결제가 한번에 이루어 지도록 개발해야 합니다.
 ## 과업지시서
 과업지시서 링크입니다. 작업시 본 가이드와 함께 참고하시기 바랍니다.  [[과업지시서_2021-02-05_전자_모금함_도입_용역.pdf]](과업지시서/과업지시서_2021-02-05_전자_모금함_도입_용역.pdf)
 ## 결제
@@ -83,7 +98,12 @@ https://xd.adobe.com/view/0e93af62-ed1d-49b2-bbdf-8b188ff8de02-5bc0/
 - 유사 웹페이지 적용 사례
   - 굿네이버스 https://www.goodneighbors.kr/support_pay/regular.gn
   - 유니세프 https://www.unicef.or.kr/donation/?TrackCode=pc_donation_btn
-
+  
+## 기부자 인증 방식
+### QRCode 모드
+QRCode 모드는 기부자가 스캔한 모바일 학생증/직원 신분증에서 얻은 학번/직번 값을 통해 결제에 필요한 정보를 가져와서 기부자가 입력한 정보와 조합하여 현장에서 즉시 기부약정/결제처리 되는 방식입니다.
+### 전화번호 모드
+전화번호 모드는 기부자가 전화번호, 결제정보만 입력하여 약정을 완료하고 사용자가 입력한 전화번호로 SMS를 발송하여 사용자가 나머지 정보를 입력하게 유도해 사용자가 최종적 정보를 입력한 이후에 결제되는 방식입니다. VAN 결제는 현장에서 결제 처리 합니다.
 ## 홈페이지와의 연동
 ### 홈페이지 개발 정보
 - 발전기금 홈페이지 프로토 타입 https://xd.adobe.com/view/26be83b6-2348-4c67-ab75-79010b78b03e-73ed/
@@ -91,7 +111,13 @@ https://xd.adobe.com/view/0e93af62-ed1d-49b2-bbdf-8b188ff8de02-5bc0/
 ### 기본 통신방식
 - 프로토콜 http, 형식 json
 - 참고자료 https://stackoverflow.com/questions/5725430/http-test-server-accepting-get-post-requests
-
+### 홈페이지 - 키오스크 연동 상세
+- 홈페이지
+  - 키오스크가 QR코드 인증 이후 결제에 필요한 정보를 가져갈 수 있도록 지원합니다.
+  - 키오스크가 제출하는 약정/결제정보를 수신합니다.
+- 키오스크
+  - 홈페이지에 카드사 식별을 위한 BIN 정보를 제공합니다.
+  - 홈페이지에 약정/결제정보를 송신합니다.
 # :two: 기능별 개발 가이드
 ## QRCode 신분증 인식
 - 동아대학교 학생증/교직원 신분증 APP상 QR코드를 리딩하면 암호화된 값을 읽을 수 있음
@@ -101,12 +127,12 @@ Type : POST
 Parameter : decode  
 ex) http://idcard.donga.ac.kr/dongacard/qrdecode?decode=CAFF847E36E50C206D333FE4D9345C14735DC19876653DED4262CB65E7C2F833
   -  Response Json [학번:년월일시분초]
+
+
 ## 기부금 결제처리
 ### 무통장입금
 ### 자동이체
 ### 신용카드 정기결제
-### QRCode 모드
-### 전화번호 모드
 ### 기기 자체 결제 완료
 ### 홈페이지로 전송 후 사후 결제
 ## 약정서 송/수신
@@ -126,7 +152,8 @@ ex) http://idcard.donga.ac.kr/dongacard/qrdecode?decode=CAFF847E36E50C206D333FE4
     - WINDOWS 환경 기기에서 user-agent가 PC로 설정되면 웹 새창이 뜨게되면서 기기 컨트롤이 어려움
   - 개발방향
     - 제한된 환경에서 결제를 진행시키기 위해 카카오페이 결제준비 API Request시 Response 값 중 next_redirect_mobile_url 값을 QR코드로 자체변환하여 기기에 출력
-  - 키오스크에서 카카오페이 아임포트 적용 참고 [[kiosk-kakaopay.md]](kiosk-kakaopay.md)
+
   - 참고자료
+    - 키오스크에서 카카오페이 아임포트 적용관련 문의내용 [[kiosk-kakaopay.md]](kiosk-kakaopay.md)
     - https://developers.kakao.com/docs/latest/ko/kakaopay/subscription
     - https://devtalk.kakao.com/t/topic/90538
