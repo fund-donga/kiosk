@@ -16,7 +16,7 @@ https://xd.adobe.com/view/0e93af62-ed1d-49b2-bbdf-8b188ff8de02-5bc0/
 - 발전기금 홈페이지 프로토 타입  
 https://xd.adobe.com/view/26be83b6-2348-4c67-ab75-79010b78b03e-73ed/
 - 발전기금 홈페이지 개발자 가이드  
-https://github.com/fund-donga/web_renewal
+https://github.com/fund-donga/web_renewal/blob/main/Dev_guide.md
 # :two: 기능별 개발 가이드
 ## QRCode 신분증 인증
 ## 약정서 송/수신
