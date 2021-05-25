@@ -9,11 +9,16 @@ https://xd.adobe.com/view/d6e5840b-81a8-4ae9-824b-e48f9038e902-83b6/
 https://xd.adobe.com/view/0e93af62-ed1d-49b2-bbdf-8b188ff8de02-5bc0/
 - 전체페이지  
   https://xd.adobe.com/view/0e93af62-ed1d-49b2-bbdf-8b188ff8de02-5bc0/
-
 # :blue_book: 목차
 ## [XD 가이드 문서](#zero-xd-가이드-문서)
 # :one: Background
+## 홈페이지와의 연동
+- 발전기금 홈페이지 프로토 타입  
+https://xd.adobe.com/view/26be83b6-2348-4c67-ab75-79010b78b03e-73ed/
+- 발전기금 홈페이지 개발자 가이드  
+https://github.com/fund-donga/web_renewal
 # :two: 기능별 개발 가이드
+## QRCode 신분증 인증
 ## 약정서 송/수신
 ## 기기설정/현황
 ## SMS 발신
