@@ -25,8 +25,7 @@ https://xd.adobe.com/view/0e93af62-ed1d-49b2-bbdf-8b188ff8de02-5bc0/
     - API문서 https://api.iamport.kr/
     - 결제DEMO https://www.iamport.kr/demo
   - 적용대상
-    - 나이스페이 PG, 카카오페이
-    - 키오스크에서 카카오페이 아임포트 적용 참고 [[kiosk-kakaopay.md]](kiosk-kakaopay.md)
+    - 나이스페이 PG, 카카오페이, 네이버페이
 
 ### 결제수단
 전체 결제수단의 개요정보입니다. 상세적용은 홈페이지, 키오스크간 상이할 수 있으니 아래쪽 관련내용과 함께 참조하시기 바랍니다.
@@ -51,16 +50,12 @@ https://xd.adobe.com/view/0e93af62-ed1d-49b2-bbdf-8b188ff8de02-5bc0/
 #### 카카오페이 (일시/정기결제)
 - 결제대행사: 카카오페이(PG, 가입예정)
 - 아임포트 이용
-  - 일시결제  
-    https://github.com/iamport/iamport-manual/blob/master/%EC%9D%B8%EC%A6%9D%EA%B2%B0%EC%A0%9C/sample/kakao.md
-  - 정기결제  
-    https://github.com/iamport/iamport-manual/blob/master/%EB%B9%84%EC%9D%B8%EC%A6%9D%EA%B2%B0%EC%A0%9C/example/kakaopay-request-billing-key.md
+  - 일시결제 https://github.com/iamport/iamport-manual/blob/master/%EC%9D%B8%EC%A6%9D%EA%B2%B0%EC%A0%9C/sample/kakao.md
+  - 정기결제 https://github.com/iamport/iamport-manual/blob/master/%EB%B9%84%EC%9D%B8%EC%A6%9D%EA%B2%B0%EC%A0%9C/example/kakaopay-request-billing-key.md
 - 참고자료  
-  - 카카오페이 개발자 센터  
-  https://developers.kakao.com/docs/latest/ko/kakaopay/common
-- 유사 웹페이지 적용 샤례
-  - 서원대학교 발전기금 홈페이지 (일시/정기기부 적용)
-  https://with.seowon.ac.kr/with/fund/step?menuId=MENU00353
+  - 카카오페이 개발자 센터 https://developers.kakao.com/docs/latest/ko/kakaopay/common
+- 유사 웹페이지 적용 사례
+  - 서원대학교 발전기금 홈페이지 (일시/정기기부 적용) https://with.seowon.ac.kr/with/fund/step?menuId=MENU00353
   - 푸르메 재단 (일시기부 적용) https://purme.org/donation-apply
 
 #### 썸패스 (일시결제)
@@ -77,32 +72,23 @@ https://xd.adobe.com/view/0e93af62-ed1d-49b2-bbdf-8b188ff8de02-5bc0/
     - 네이버페이 최종 적용 불가 판단 시 썸패스의 웹페이지 적용여부를 검토
     - 네이버페이, 썸패스 모두 웹 적용 불가 판단시 웹은 두가지 모두 구현하지 않음
 - 아임포트 이용
-  - 일시결제  
-  https://github.com/iamport/iamport-manual/blob/master/NAVERPAY/sample/naverpay-pg.md
-  - 정기결제  
-  https://github.com/iamport/iamport-manual/blob/master/NAVERPAY/sample/naverpay-recurring.md
+  - 일시결제 https://github.com/iamport/iamport-manual/blob/master/NAVERPAY/sample/naverpay-pg.md
+  - 정기결제 https://github.com/iamport/iamport-manual/blob/master/NAVERPAY/sample/naverpay-recurring.md
 - 참고자료
-  - 네이버페이 개발자 센터
-  일시결제  
-  https://developer.pay.naver.com/docs/v2/api#payments-payments_flow
-  정기결제  
-  https://developer.pay.naver.com/docs/v2/api#recurrent-recurrent_summary
+  - 네이버페이 개발자 센터  
+  일시결제 https://developer.pay.naver.com/docs/v2/api#payments-payments_flow  
+  정기결제 https://developer.pay.naver.com/docs/v2/api#recurrent-recurrent_summary
 - 유사 웹페이지 적용 사례
-  - 굿네이버스  
-  https://www.goodneighbors.kr/support_pay/regular.gn
-  - 유니세프  
-  https://www.unicef.or.kr/donation/?TrackCode=pc_donation_btn
+  - 굿네이버스 https://www.goodneighbors.kr/support_pay/regular.gn
+  - 유니세프 https://www.unicef.or.kr/donation/?TrackCode=pc_donation_btn
 
 ## 홈페이지와의 연동
 ### 홈페이지 개발 정보
-- 발전기금 홈페이지 프로토 타입  
-https://xd.adobe.com/view/26be83b6-2348-4c67-ab75-79010b78b03e-73ed/
-- 발전기금 홈페이지 개발자 가이드  
-https://github.com/fund-donga/web_renewal/blob/main/Dev_guide.md
+- 발전기금 홈페이지 프로토 타입 https://xd.adobe.com/view/26be83b6-2348-4c67-ab75-79010b78b03e-73ed/
+- 발전기금 홈페이지 개발자 가이드 https://github.com/fund-donga/web_renewal/blob/main/Dev_guide.md
 ### 기본 통신방식
 - 프로토콜 http, 형식 json
-- 참고자료  
-  https://stackoverflow.com/questions/5725430/http-test-server-accepting-get-post-requests
+- 참고자료 https://stackoverflow.com/questions/5725430/http-test-server-accepting-get-post-requests
 
 # :two: 기능별 개발 가이드
 ## QRCode 신분증 인식
@@ -138,6 +124,7 @@ ex) http://idcard.donga.ac.kr/dongacard/qrdecode?decode=CAFF847E36E50C206D333FE4
     - WINDOWS 환경 기기에서 user-agent가 PC로 설정되면 웹 새창이 뜨게되면서 기기 컨트롤이 어려움
   - 개발방향
     - 제한된 환경에서 결제를 진행시키기 위해 카카오페이 결제준비 API Request시 Response 값 중 next_redirect_mobile_url 값을 QR코드로 자체변환하여 기기에 출력
+  - 키오스크에서 카카오페이 아임포트 적용 참고 [[kiosk-kakaopay.md]](kiosk-kakaopay.md)
   - 참고자료
     - https://developers.kakao.com/docs/latest/ko/kakaopay/subscription
     - https://devtalk.kakao.com/t/topic/90538
