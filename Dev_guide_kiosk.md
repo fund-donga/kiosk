@@ -18,7 +18,14 @@ https://xd.adobe.com/view/26be83b6-2348-4c67-ab75-79010b78b03e-73ed/
 - 발전기금 홈페이지 개발자 가이드  
 https://github.com/fund-donga/web_renewal/blob/main/Dev_guide.md
 # :two: 기능별 개발 가이드
-## QRCode 신분증 인증
+## QRCode 신분증 인식
+- 동아대학교 학생증/교직원 신분증 APP상 QR코드를 리딩하면 암호화된 값을 읽을 수 있음
+- QRCode 값 호출
+  - http://idcard.donga.ac.kr/dongacard/qrdecode  
+Type : POST  
+Parameter : decode  
+ex) http://idcard.donga.ac.kr/dongacard/qrdecode?decode=CAFF847E36E50C206D333FE4D9345C14735DC19876653DED4262CB65E7C2F833
+  -  Response Json [학번:년월일시분초]
 ## 약정서 송/수신
 ## 기기설정/현황
 ## SMS 발신
